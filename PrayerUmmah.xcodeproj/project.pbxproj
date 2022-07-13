@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1947B52875EE7100773F31 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1947B42875EE7100773F31 /* Launch Screen.storyboard */; };
+		2C1947B62875EE7100773F31 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1947B42875EE7100773F31 /* Launch Screen.storyboard */; };
+		2C1947B82875F44300773F31 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1947B72875F44300773F31 /* HomeView.swift */; };
+		2C1947B92875F44300773F31 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1947B72875F44300773F31 /* HomeView.swift */; };
+		2C3BDBB92876E7FB00665F63 /* PrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BDBB82876E7FB00665F63 /* PrayerView.swift */; };
+		2C3BDBBA2876E7FB00665F63 /* PrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BDBB82876E7FB00665F63 /* PrayerView.swift */; };
+		2C3BDBBC2876E97F00665F63 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BDBBB2876E97F00665F63 /* SettingsView.swift */; };
+		2C3BDBBD2876E97F00665F63 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BDBBB2876E97F00665F63 /* SettingsView.swift */; };
+		2C3BDBBF2876E99300665F63 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BDBBE2876E99300665F63 /* FriendsView.swift */; };
+		2C3BDBC02876E99300665F63 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BDBBE2876E99300665F63 /* FriendsView.swift */; };
+		2C3BDBC2287743DD00665F63 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C3BDBC1287743DD00665F63 /* Property List.plist */; };
+		2C3BDBC3287743DD00665F63 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C3BDBC1287743DD00665F63 /* Property List.plist */; };
+		2C868B90287EBBA9001F095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C868B8F287EBBA9001F095A /* AppDelegate.swift */; };
+		2C868B91287EBBA9001F095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C868B8F287EBBA9001F095A /* AppDelegate.swift */; };
 		2C9FF38C2874EA8E003A46CC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF38B2874EA8E003A46CC /* Tests_iOS.swift */; };
 		2C9FF38E2874EA8E003A46CC /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF38D2874EA8E003A46CC /* Tests_iOSLaunchTests.swift */; };
 		2C9FF3982874EA8E003A46CC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF3972874EA8E003A46CC /* Tests_macOS.swift */; };
@@ -17,6 +31,20 @@
 		2C9FF39E2874EA8E003A46CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF3742874EA8C003A46CC /* ContentView.swift */; };
 		2C9FF39F2874EA8E003A46CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FF3752874EA8E003A46CC /* Assets.xcassets */; };
 		2C9FF3A02874EA8E003A46CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FF3752874EA8E003A46CC /* Assets.xcassets */; };
+		2C9FF3B02875CC7A003A46CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FF3AF2875CC7A003A46CC /* GoogleService-Info.plist */; };
+		2C9FF3B12875CC7A003A46CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FF3AF2875CC7A003A46CC /* GoogleService-Info.plist */; };
+		2C9FF3B42875D07E003A46CC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9FF3B32875D07E003A46CC /* FirebaseAnalyticsSwift */; };
+		2C9FF3B62875D07E003A46CC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9FF3B52875D07E003A46CC /* FirebaseAuth */; };
+		2C9FF3B82875D07E003A46CC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9FF3B72875D07E003A46CC /* FirebaseFirestoreSwift */; };
+		2CEA5F29287ACCEF00532664 /* PrayerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F28287ACCEF00532664 /* PrayerDataModel.swift */; };
+		2CEA5F2A287ACCEF00532664 /* PrayerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F28287ACCEF00532664 /* PrayerDataModel.swift */; };
+		2CEA5F2C287ACCF400532664 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F2B287ACCF400532664 /* UserDataModel.swift */; };
+		2CEA5F2D287ACCF400532664 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F2B287ACCF400532664 /* UserDataModel.swift */; };
+		2CEA5F2F287DFB6600532664 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F2E287DFB6600532664 /* Extensions.swift */; };
+		2CEA5F30287DFB6600532664 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F2E287DFB6600532664 /* Extensions.swift */; };
+		2CEA5F32287DFC1B00532664 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F31287DFC1B00532664 /* HelperFunctions.swift */; };
+		2CEA5F33287DFC1B00532664 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F31287DFC1B00532664 /* HelperFunctions.swift */; };
+		2CEA5F38287E61A500532664 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2CEA5F37287E61A500532664 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +65,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C1947B42875EE7100773F31 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		2C1947B72875F44300773F31 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2C3BDBB82876E7FB00665F63 /* PrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerView.swift; sourceTree = "<group>"; };
+		2C3BDBBB2876E97F00665F63 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2C3BDBBE2876E99300665F63 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		2C3BDBC1287743DD00665F63 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		2C868B8F287EBBA9001F095A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C9FF3732874EA8C003A46CC /* PrayerUmmahApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerUmmahApp.swift; sourceTree = "<group>"; };
 		2C9FF3742874EA8C003A46CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C9FF3752874EA8E003A46CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +84,13 @@
 		2C9FF3932874EA8E003A46CC /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9FF3972874EA8E003A46CC /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		2C9FF3992874EA8E003A46CC /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		2C9FF3AF2875CC7A003A46CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CEA5F28287ACCEF00532664 /* PrayerDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrayerDataModel.swift; path = DataModels/PrayerDataModel.swift; sourceTree = "<group>"; };
+		2CEA5F2B287ACCF400532664 /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDataModel.swift; path = DataModels/UserDataModel.swift; sourceTree = "<group>"; };
+		2CEA5F2E287DFB6600532664 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2CEA5F31287DFC1B00532664 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		2CEA5F34287E319800532664 /* PrayerUmmah (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PrayerUmmah (iOS).entitlements"; sourceTree = "<group>"; };
+		2CEA5F35287E31E900532664 /* PrayerUmmah--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PrayerUmmah--iOS--Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CEA5F38287E61A500532664 /* FirebaseMessaging in Frameworks */,
+				2C9FF3B42875D07E003A46CC /* FirebaseAnalyticsSwift in Frameworks */,
+				2C9FF3B62875D07E003A46CC /* FirebaseAuth in Frameworks */,
+				2C9FF3B82875D07E003A46CC /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,9 +129,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C3BDBCC287AC8DA00665F63 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2C9FF36D2874EA8C003A46CC = {
 			isa = PBXGroup;
 			children = (
+				2CEA5F35287E31E900532664 /* PrayerUmmah--iOS--Info.plist */,
+				2CEA5F34287E319800532664 /* PrayerUmmah (iOS).entitlements */,
 				2C9FF3722874EA8C003A46CC /* Shared */,
 				2C9FF3812874EA8E003A46CC /* macOS */,
 				2C9FF38A2874EA8E003A46CC /* Tests iOS */,
@@ -97,9 +152,22 @@
 		2C9FF3722874EA8C003A46CC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2C3BDBCC287AC8DA00665F63 /* Components */,
+				2C9FF3AF2875CC7A003A46CC /* GoogleService-Info.plist */,
 				2C9FF3732874EA8C003A46CC /* PrayerUmmahApp.swift */,
 				2C9FF3742874EA8C003A46CC /* ContentView.swift */,
 				2C9FF3752874EA8E003A46CC /* Assets.xcassets */,
+				2C1947B42875EE7100773F31 /* Launch Screen.storyboard */,
+				2C1947B72875F44300773F31 /* HomeView.swift */,
+				2C3BDBB82876E7FB00665F63 /* PrayerView.swift */,
+				2C3BDBBB2876E97F00665F63 /* SettingsView.swift */,
+				2C3BDBBE2876E99300665F63 /* FriendsView.swift */,
+				2CEA5F28287ACCEF00532664 /* PrayerDataModel.swift */,
+				2CEA5F2B287ACCF400532664 /* UserDataModel.swift */,
+				2C3BDBC1287743DD00665F63 /* Property List.plist */,
+				2CEA5F2E287DFB6600532664 /* Extensions.swift */,
+				2CEA5F31287DFC1B00532664 /* HelperFunctions.swift */,
+				2C868B8F287EBBA9001F095A /* AppDelegate.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -157,6 +225,12 @@
 			dependencies = (
 			);
 			name = "PrayerUmmah (iOS)";
+			packageProductDependencies = (
+				2C9FF3B32875D07E003A46CC /* FirebaseAnalyticsSwift */,
+				2C9FF3B52875D07E003A46CC /* FirebaseAuth */,
+				2C9FF3B72875D07E003A46CC /* FirebaseFirestoreSwift */,
+				2CEA5F37287E61A500532664 /* FirebaseMessaging */,
+			);
 			productName = "PrayerUmmah (iOS)";
 			productReference = 2C9FF37A2874EA8E003A46CC /* PrayerUmmah.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +323,10 @@
 				Base,
 			);
 			mainGroup = 2C9FF36D2874EA8C003A46CC;
+			packageReferences = (
+				2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2CEA5F36287E61A500532664 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 2C9FF37B2874EA8E003A46CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,6 +345,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C9FF39F2874EA8E003A46CC /* Assets.xcassets in Resources */,
+				2C9FF3B02875CC7A003A46CC /* GoogleService-Info.plist in Resources */,
+				2C3BDBC2287743DD00665F63 /* Property List.plist in Resources */,
+				2C1947B52875EE7100773F31 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C9FF3A02874EA8E003A46CC /* Assets.xcassets in Resources */,
+				2C9FF3B12875CC7A003A46CC /* GoogleService-Info.plist in Resources */,
+				2C3BDBC3287743DD00665F63 /* Property List.plist in Resources */,
+				2C1947B62875EE7100773F31 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +383,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C868B90287EBBA9001F095A /* AppDelegate.swift in Sources */,
+				2C3BDBBF2876E99300665F63 /* FriendsView.swift in Sources */,
+				2CEA5F2F287DFB6600532664 /* Extensions.swift in Sources */,
+				2C3BDBBC2876E97F00665F63 /* SettingsView.swift in Sources */,
+				2C1947B82875F44300773F31 /* HomeView.swift in Sources */,
+				2C3BDBB92876E7FB00665F63 /* PrayerView.swift in Sources */,
+				2CEA5F32287DFC1B00532664 /* HelperFunctions.swift in Sources */,
 				2C9FF39D2874EA8E003A46CC /* ContentView.swift in Sources */,
+				2CEA5F2C287ACCF400532664 /* UserDataModel.swift in Sources */,
+				2CEA5F29287ACCEF00532664 /* PrayerDataModel.swift in Sources */,
 				2C9FF39B2874EA8E003A46CC /* PrayerUmmahApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +401,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C868B91287EBBA9001F095A /* AppDelegate.swift in Sources */,
+				2C3BDBC02876E99300665F63 /* FriendsView.swift in Sources */,
+				2CEA5F30287DFB6600532664 /* Extensions.swift in Sources */,
+				2C3BDBBD2876E97F00665F63 /* SettingsView.swift in Sources */,
+				2C1947B92875F44300773F31 /* HomeView.swift in Sources */,
+				2C3BDBBA2876E7FB00665F63 /* PrayerView.swift in Sources */,
+				2CEA5F33287DFC1B00532664 /* HelperFunctions.swift in Sources */,
 				2C9FF39E2874EA8E003A46CC /* ContentView.swift in Sources */,
+				2CEA5F2D287ACCF400532664 /* UserDataModel.swift in Sources */,
+				2CEA5F2A287ACCEF00532664 /* PrayerDataModel.swift in Sources */,
 				2C9FF39C2874EA8E003A46CC /* PrayerUmmahApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,11 +563,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PrayerUmmah (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M5SRZY657F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PrayerUmmah--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -491,11 +595,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PrayerUmmah (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M5SRZY657F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PrayerUmmah--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -701,6 +807,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		2CEA5F36287E61A500532664 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C9FF3B32875D07E003A46CC /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		2C9FF3B52875D07E003A46CC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2C9FF3B72875D07E003A46CC /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		2CEA5F37287E61A500532664 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2C9FF36E2874EA8C003A46CC /* Project object */;
 }

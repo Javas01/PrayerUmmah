@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct PrayerUmmahApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
         }
     }
 }
