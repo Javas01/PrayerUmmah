@@ -21,6 +21,10 @@
 		2C3BDBC3287743DD00665F63 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C3BDBC1287743DD00665F63 /* Property List.plist */; };
 		2C868B90287EBBA9001F095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C868B8F287EBBA9001F095A /* AppDelegate.swift */; };
 		2C868B91287EBBA9001F095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C868B8F287EBBA9001F095A /* AppDelegate.swift */; };
+		2C868B94287F49EF001F095A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C868B93287F49EF001F095A /* FirebaseAnalyticsSwift */; };
+		2C868B96287F49EF001F095A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C868B95287F49EF001F095A /* FirebaseAuth */; };
+		2C868B98287F49EF001F095A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C868B97287F49EF001F095A /* FirebaseFirestoreSwift */; };
+		2C868B9A287F49EF001F095A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2C868B99287F49EF001F095A /* FirebaseMessaging */; };
 		2C9FF38C2874EA8E003A46CC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF38B2874EA8E003A46CC /* Tests_iOS.swift */; };
 		2C9FF38E2874EA8E003A46CC /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF38D2874EA8E003A46CC /* Tests_iOSLaunchTests.swift */; };
 		2C9FF3982874EA8E003A46CC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF3972874EA8E003A46CC /* Tests_macOS.swift */; };
@@ -33,9 +37,6 @@
 		2C9FF3A02874EA8E003A46CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FF3752874EA8E003A46CC /* Assets.xcassets */; };
 		2C9FF3B02875CC7A003A46CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FF3AF2875CC7A003A46CC /* GoogleService-Info.plist */; };
 		2C9FF3B12875CC7A003A46CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FF3AF2875CC7A003A46CC /* GoogleService-Info.plist */; };
-		2C9FF3B42875D07E003A46CC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9FF3B32875D07E003A46CC /* FirebaseAnalyticsSwift */; };
-		2C9FF3B62875D07E003A46CC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9FF3B52875D07E003A46CC /* FirebaseAuth */; };
-		2C9FF3B82875D07E003A46CC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C9FF3B72875D07E003A46CC /* FirebaseFirestoreSwift */; };
 		2CEA5F29287ACCEF00532664 /* PrayerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F28287ACCEF00532664 /* PrayerDataModel.swift */; };
 		2CEA5F2A287ACCEF00532664 /* PrayerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F28287ACCEF00532664 /* PrayerDataModel.swift */; };
 		2CEA5F2C287ACCF400532664 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F2B287ACCF400532664 /* UserDataModel.swift */; };
@@ -44,7 +45,6 @@
 		2CEA5F30287DFB6600532664 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F2E287DFB6600532664 /* Extensions.swift */; };
 		2CEA5F32287DFC1B00532664 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F31287DFC1B00532664 /* HelperFunctions.swift */; };
 		2CEA5F33287DFC1B00532664 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA5F31287DFC1B00532664 /* HelperFunctions.swift */; };
-		2CEA5F38287E61A500532664 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2CEA5F37287E61A500532664 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,10 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CEA5F38287E61A500532664 /* FirebaseMessaging in Frameworks */,
-				2C9FF3B42875D07E003A46CC /* FirebaseAnalyticsSwift in Frameworks */,
-				2C9FF3B62875D07E003A46CC /* FirebaseAuth in Frameworks */,
-				2C9FF3B82875D07E003A46CC /* FirebaseFirestoreSwift in Frameworks */,
+				2C868B9A287F49EF001F095A /* FirebaseMessaging in Frameworks */,
+				2C868B94287F49EF001F095A /* FirebaseAnalyticsSwift in Frameworks */,
+				2C868B96287F49EF001F095A /* FirebaseAuth in Frameworks */,
+				2C868B98287F49EF001F095A /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +136,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		2C868B92287F48E4001F095A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2C9FF36D2874EA8C003A46CC = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +153,7 @@
 				2C9FF38A2874EA8E003A46CC /* Tests iOS */,
 				2C9FF3962874EA8E003A46CC /* Tests macOS */,
 				2C9FF37B2874EA8E003A46CC /* Products */,
+				2C868B92287F48E4001F095A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,10 +234,10 @@
 			);
 			name = "PrayerUmmah (iOS)";
 			packageProductDependencies = (
-				2C9FF3B32875D07E003A46CC /* FirebaseAnalyticsSwift */,
-				2C9FF3B52875D07E003A46CC /* FirebaseAuth */,
-				2C9FF3B72875D07E003A46CC /* FirebaseFirestoreSwift */,
-				2CEA5F37287E61A500532664 /* FirebaseMessaging */,
+				2C868B93287F49EF001F095A /* FirebaseAnalyticsSwift */,
+				2C868B95287F49EF001F095A /* FirebaseAuth */,
+				2C868B97287F49EF001F095A /* FirebaseFirestoreSwift */,
+				2C868B99287F49EF001F095A /* FirebaseMessaging */,
 			);
 			productName = "PrayerUmmah (iOS)";
 			productReference = 2C9FF37A2874EA8E003A46CC /* PrayerUmmah.app */;
@@ -296,7 +304,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					2C9FF3792874EA8E003A46CC = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -324,7 +332,6 @@
 			);
 			mainGroup = 2C9FF36D2874EA8C003A46CC;
 			packageReferences = (
-				2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2CEA5F36287E61A500532664 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 2C9FF37B2874EA8E003A46CC /* Products */;
@@ -482,6 +489,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -540,6 +548,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -629,9 +638,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = M5SRZY657F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -657,9 +668,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = M5SRZY657F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -726,6 +739,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = M5SRZY657F;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -745,6 +759,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = M5SRZY657F;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -809,14 +824,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 		2CEA5F36287E61A500532664 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -828,24 +835,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2C9FF3B32875D07E003A46CC /* FirebaseAnalyticsSwift */ = {
+		2C868B93287F49EF001F095A /* FirebaseAnalyticsSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 2CEA5F36287E61A500532664 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsSwift;
 		};
-		2C9FF3B52875D07E003A46CC /* FirebaseAuth */ = {
+		2C868B95287F49EF001F095A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 2CEA5F36287E61A500532664 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		2C9FF3B72875D07E003A46CC /* FirebaseFirestoreSwift */ = {
+		2C868B97287F49EF001F095A /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 2CEA5F36287E61A500532664 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
 		};
-		2CEA5F37287E61A500532664 /* FirebaseMessaging */ = {
+		2C868B99287F49EF001F095A /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2C9FF3B22875D07E003A46CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 2CEA5F36287E61A500532664 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */

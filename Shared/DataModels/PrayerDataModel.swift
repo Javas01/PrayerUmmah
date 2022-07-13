@@ -11,10 +11,10 @@ import SwiftUI
 struct PrayerData: Codable {
     let code: Int
     let status: String
-    let data: [Data]
+    let data: [Prayer]
 }
 
-struct Data: Hashable, Codable {
+struct Prayer: Hashable, Codable {
     let timings: [String: String]
     let date: DateClass
     let meta: Meta

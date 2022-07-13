@@ -1,10 +1,10 @@
-import UIKit
+import SwiftUI
 import UserNotifications
 
 import FirebaseCore
 import FirebaseMessaging
-
-class AppDelegate: UIResponder, UIApplicationDelegate {
+// change to UIresponder
+class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
 //  var window: UIWindow?
   let gcmMessageIDKey = "gcm.message_id"
 
@@ -16,23 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // [START set_messaging_delegate]
     Messaging.messaging().delegate = self
     // [END set_messaging_delegate]
-    // Register for remote notifications. This shows a permission dialog on first run, to
-    // show the dialog at a more appropriate time move this registration accordingly.
+    // Register for remote notifications. This shows a permission dialog on first run
     // [START register_for_notifications]
-    if #available(iOS 10.0, *) {
-      // For iOS 10 display notification (sent via APNS)
-      UNUserNotificationCenter.current().delegate = self
+    UNUserNotificationCenter.current().delegate = self
 
-      let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-      UNUserNotificationCenter.current().requestAuthorization(
+                         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+    UNUserNotificationCenter.current().requestAuthorization(
         options: authOptions,
         completionHandler: { _, _ in }
-      )
-    } else {
-      let settings: UIUserNotificationSettings =
-        UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-      application.registerUserNotificationSettings(settings)
-    }
+    )
 
     application.registerForRemoteNotifications()
 
@@ -46,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // this callback will not be fired till the user taps on the notification launching the application.
     // TODO: Handle data of notification
     // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
+     Messaging.messaging().appDidReceiveMessage(userInfo)
     // Print message ID.
     if let messageID = userInfo[gcmMessageIDKey] {
       print("Message ID: \(messageID)")
@@ -65,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // this callback will not be fired till the user taps on the notification launching the application.
     // TODO: Handle data of notification
     // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
+     Messaging.messaging().appDidReceiveMessage(userInfo)
     // Print message ID.
     if let messageID = userInfo[gcmMessageIDKey] {
       print("Message ID: \(messageID)")
@@ -91,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("APNs token retrieved: \(deviceToken)")
 
     // With swizzling disabled you must set the APNs token here.
-    // Messaging.messaging().apnsToken = deviceToken
+     Messaging.messaging().apnsToken = deviceToken
   }
 }
 
@@ -106,7 +98,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     let userInfo = notification.request.content.userInfo
 
     // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
+     Messaging.messaging().appDidReceiveMessage(userInfo)
     // [START_EXCLUDE]
     // Print message ID.
     if let messageID = userInfo[gcmMessageIDKey] {
@@ -132,7 +124,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     // [END_EXCLUDE]
     // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
+     Messaging.messaging().appDidReceiveMessage(userInfo)
     // Print full message.
     print(userInfo)
 

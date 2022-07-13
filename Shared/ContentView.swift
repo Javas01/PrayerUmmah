@@ -27,8 +27,7 @@ struct ContentView: View {
             "firstName": firstName,
             "lastName": lastName,
             "email": email,
-            "profilePic": "",
-            "prayerHistory": [:]
+            "profilePic": ""
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
