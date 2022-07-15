@@ -24,28 +24,9 @@ struct EmptyModifier: ViewModifier {
     }
 }
 
-func getPrayerDateAndIndex(prayer: String) -> (date: String, index: Int){
-    let currDate = getCurrentDate()
-    var prayerIndex: Int
-
-    switch prayer {
-    case "Fajr":
-        prayerIndex = 0
-    case "Dhuhr":
-        prayerIndex = 1
-    case "Asr":
-        prayerIndex = 2
-    case "Maghrib":
-        prayerIndex = 3
-    default:
-        prayerIndex = 4
-    }
-    return (currDate, prayerIndex)
-}
-
 struct PrayerView: View {
-    @StateObject var prayerModel = PrayerModel()
-    @StateObject var userModel = UserModel()
+    @ObservedObject var prayerModel: PrayerModel
+    @ObservedObject var userModel: UserModel
     @State private var isOverlayVisible = true
     @State var completedUsers: [User] = []
     @State var notCompletedUsers: [User] = []
@@ -59,10 +40,10 @@ struct PrayerView: View {
     func logPrayer(response: Bool) -> Void {
         isOverlayVisible = false
         let currPrayer = prayerModel.currPrayer
-        var copy = userModel.currUser?.prayerData
+        var copy = UserModel.currUser?.prayerData
         copy?[currPrayer] = response
         
-        if copy == userModel.currUser?.prayerData {
+        if copy == UserModel.currUser?.prayerData {
             print("Nothing changed")
             return
         }
@@ -79,7 +60,7 @@ struct PrayerView: View {
     }
     
     func getCompletedUsers() -> Void {
-        let selectedPrayer = prayerModel.selectedPrayer
+        let selectedPrayer = prayerModel.selectedPrayer // make static
         
         completedUsers = userModel.users.filter {user in
             user.prayerData?[selectedPrayer] == true
@@ -98,8 +79,8 @@ struct PrayerView: View {
                 }
                 HStack {
                     ForEach(prayerModel.prayers, id: \.self.key) { prayer in
-                        let prayerName = prayer.key as? String ?? ""
-                        let prayerTime = prayer.value as? String ?? ""
+                        let prayerName = prayer.key
+                        let prayerTime = prayer.value
 
                         Button(action: {() -> Void in prayerModel.selectedPrayer = prayerName; getCompletedUsers()}) {
                             VStack {
@@ -128,7 +109,7 @@ struct PrayerView: View {
                             }
                         }.blur(radius: isOverlayVisible ? 4 : 0)
                     }
-                    .onChange(of: userModel.users, perform: { _ in
+                    .onChange(of: userModel.users, perform: { _ in // move to userModel
                         getCompletedUsers()
                     })
                     .buttonStyle(BorderlessButtonStyle())
@@ -136,35 +117,32 @@ struct PrayerView: View {
                         Text("Did you pray \(prayerModel.currPrayer)?")
                             .font(.largeTitle)
                         HStack {
-                            Button("No"){
-                                logPrayer(response: false)
+                            Button(action: {() -> Void in logPrayer(response: false)}){
+                                Text("No")
+                                    .frame(width: 100, height: 50)
+                                    .padding(10)
+                                    .background(Color("Primary"))
+                                    .cornerRadius(10)
+                                    .foregroundColor(Color.white)
+                                    .font(.largeTitle)
                             }
-                                .frame(width: 100, height: 50)
-                                .padding(10)
-                                .background(Color("Primary"))
-                                .cornerRadius(10)
-                                .foregroundColor(Color.white)
-                                .font(.largeTitle)
-                                
-                            Button("Yes"){
-                                logPrayer(response: true)
-                                
+                            Button(action: {() -> Void in logPrayer(response: true)}){
+                                Text("Yes")
+                                    .frame(width: 100, height: 50)
+                                    .padding(10)
+                                    .background(Color("Primary"))
+                                    .cornerRadius(10)
+                                    .foregroundColor(Color.white)
+                                    .font(.largeTitle)
                             }
-                                .frame(width: 100, height: 50)
-                                .padding(10)
-                                .background(Color("Primary"))
-                                .cornerRadius(10)
-                                .foregroundColor(Color.white)
-                                .font(.largeTitle)
                         }
                     }.isEmpty(!isOverlayVisible)
                 }
         }
         .onAppear {
             UITableView.appearance().backgroundColor = .systemGroupedBackground
-            userModel.getUsers()
-            prayerModel.fetch()
         }
+        .onChange(of: UserModel.currUser, perform: { _ in isOverlayVisible = UserModel.currUser?.prayerData?[prayerModel.currPrayer] == false})
     }
 }
 

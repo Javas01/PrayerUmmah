@@ -74,7 +74,6 @@ struct ContentView: View {
                         .cornerRadius(10)
                         .disableAutocorrection(true)
                         .textInputAutocapitalization(.never)
-
                     SecureField("Password", text: $password)
                         .padding()
                         .frame(width: 300, height: 50)
@@ -82,15 +81,15 @@ struct ContentView: View {
                         .cornerRadius(10)
                         .disableAutocorrection(true)
                         .textInputAutocapitalization(.never)
-                    Button("Log In") {
-                        logIn()
+                    Button(action: {() -> Void in logIn()}) {
+                        Text("Log In")
+                            .padding()
+                            .frame(width: 300, height: 50)
+                            .background(Color("Primary"))
+                            .cornerRadius(10)
+                            .foregroundColor(Color.white)
+                            .font(.headline)
                     }
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color("Primary"))
-                        .cornerRadius(10)
-                        .foregroundColor(Color.white)
-                        .font(.headline)
                 } else {
                     HStack{
                         TextField("First Name", text: $firstName)
@@ -113,7 +112,6 @@ struct ContentView: View {
                         .cornerRadius(10)
                         .disableAutocorrection(true)
                         .textInputAutocapitalization(.never)
-
                     SecureField("Password", text: $password)
                         .padding()
                         .frame(width: 300, height: 50)
@@ -121,17 +119,16 @@ struct ContentView: View {
                         .cornerRadius(10)
                         .disableAutocorrection(true)
                         .textInputAutocapitalization(.never)
-                    Button("Sign Up") {
-                        signUp()
+                    Button(action: {() -> Void in signUp()}) {
+                        Text("Sign Up")
+                            .padding()
+                            .frame(width: 300, height: 50)
+                            .background(Color("Primary"))
+                            .cornerRadius(10)
+                            .foregroundColor(Color.white)
+                            .font(.headline)
                     }
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color("Primary"))
-                        .cornerRadius(10)
-                        .foregroundColor(Color.white)
-                        .font(.headline)
                 }
-
                 Spacer()
                 Picker("", selection: $currSigninType) {
                     ForEach(signInTypes, id: \.self) {

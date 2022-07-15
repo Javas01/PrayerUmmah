@@ -10,6 +10,8 @@ import FirebaseAuth
 import FirebaseFirestore
 
 struct HomeView: View {
+    @StateObject var prayerModel = PrayerModel()
+    @StateObject var userModel = UserModel()
     @State var selectedTab = 2
     
     var body: some View {
@@ -18,7 +20,7 @@ struct HomeView: View {
                 .tabItem{
                     Label("Friends", systemImage: "person.fill")
                 }.tag(1)
-            PrayerView()
+            PrayerView(prayerModel: prayerModel, userModel: userModel)
                 .tabItem{
                     Label("Home", systemImage: "house.fill")
                 }.tag(2)
@@ -29,6 +31,10 @@ struct HomeView: View {
         }
         .accentColor(Color("Primary"))
         .navigationBarBackButtonHidden(true)
+        .task {
+            await userModel.getUsers()
+            prayerModel.fetch()
+        }
     }
 }
 

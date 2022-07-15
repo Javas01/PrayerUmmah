@@ -61,26 +61,27 @@ struct UserPrayerData: Codable, Equatable {
 class UserModel: ObservableObject {
     @Published var users: [User] = []
 //    @Published var usersPrayerHistory: [userPrayerData] = []
-    @Published var currUser: User?
+    static var currUser: User?
     @Published var completedUsers: [User] = []
     @Published var notCompletedUsers: [User] = []
 
     private let db = Firestore.firestore()
 
-    func getUsers() {
-        db.collection("users").getDocuments() { (querySnapshot, err) in
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
-            }
+    @MainActor
+    func getUsers() async {
+        do {
+            let querySnapshot = try await db.collection("users").getDocuments()
+            let documents = querySnapshot.documents
 
             self.users = documents.compactMap { documentSnapshot -> User in
                 return try! documentSnapshot.data(as: User.self)
             }
-            self.currUser = self.users.first(where: {$0.id == Auth.auth().currentUser?.uid})!
+            UserModel.currUser = self.users.first(where: {$0.id == Auth.auth().currentUser?.uid})!
             self.getPrayerData(userIds: self.users.map{ user in
                 user.id ?? ""
             })
+        } catch {
+            print("There was an issue getting Users: \(error)")
         }
     }
     func getPrayerData(userIds: [String], date: String = getCurrentDate()) -> Void {
@@ -109,7 +110,7 @@ class UserModel: ObservableObject {
                             return user
                         }
                     }
-                    self.currUser = self.users.first(where: {$0.id == Auth.auth().currentUser?.uid})!
+                    UserModel.currUser = self.users.first(where: {$0.id == Auth.auth().currentUser?.uid})!
                 }
         }
     }

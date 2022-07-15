@@ -19,12 +19,16 @@
 		2C3BDBC02876E99300665F63 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BDBBE2876E99300665F63 /* FriendsView.swift */; };
 		2C3BDBC2287743DD00665F63 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C3BDBC1287743DD00665F63 /* Property List.plist */; };
 		2C3BDBC3287743DD00665F63 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C3BDBC1287743DD00665F63 /* Property List.plist */; };
+		2C6AD237288167EC003E8039 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6AD236288167EC003E8039 /* NotificationService.swift */; };
+		2C6AD23B288167EC003E8039 /* RecordPrayer.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2C6AD234288167EC003E8039 /* RecordPrayer.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2C868B90287EBBA9001F095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C868B8F287EBBA9001F095A /* AppDelegate.swift */; };
 		2C868B91287EBBA9001F095A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C868B8F287EBBA9001F095A /* AppDelegate.swift */; };
 		2C868B94287F49EF001F095A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C868B93287F49EF001F095A /* FirebaseAnalyticsSwift */; };
 		2C868B96287F49EF001F095A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C868B95287F49EF001F095A /* FirebaseAuth */; };
 		2C868B98287F49EF001F095A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C868B97287F49EF001F095A /* FirebaseFirestoreSwift */; };
 		2C868B9A287F49EF001F095A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2C868B99287F49EF001F095A /* FirebaseMessaging */; };
+		2C868B9C28810E27001F095A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C868B9B28810E27001F095A /* NotificationManager.swift */; };
+		2C868B9D28810E27001F095A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C868B9B28810E27001F095A /* NotificationManager.swift */; };
 		2C9FF38C2874EA8E003A46CC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF38B2874EA8E003A46CC /* Tests_iOS.swift */; };
 		2C9FF38E2874EA8E003A46CC /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF38D2874EA8E003A46CC /* Tests_iOSLaunchTests.swift */; };
 		2C9FF3982874EA8E003A46CC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FF3972874EA8E003A46CC /* Tests_macOS.swift */; };
@@ -48,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2C6AD239288167EC003E8039 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C9FF36E2874EA8C003A46CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C6AD233288167EC003E8039;
+			remoteInfo = RecordPrayer;
+		};
 		2C9FF3882874EA8E003A46CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C9FF36E2874EA8C003A46CC /* Project object */;
@@ -64,6 +75,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2C6AD23F288167EC003E8039 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2C6AD23B288167EC003E8039 /* RecordPrayer.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2C1947B42875EE7100773F31 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2C1947B72875F44300773F31 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -71,7 +96,11 @@
 		2C3BDBBB2876E97F00665F63 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2C3BDBBE2876E99300665F63 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		2C3BDBC1287743DD00665F63 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		2C6AD234288167EC003E8039 /* RecordPrayer.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RecordPrayer.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6AD236288167EC003E8039 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		2C6AD238288167EC003E8039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C868B8F287EBBA9001F095A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C868B9B28810E27001F095A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		2C9FF3732874EA8C003A46CC /* PrayerUmmahApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerUmmahApp.swift; sourceTree = "<group>"; };
 		2C9FF3742874EA8C003A46CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C9FF3752874EA8E003A46CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +123,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2C6AD231288167EC003E8039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C9FF3772874EA8E003A46CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,6 +172,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		2C6AD235288167EC003E8039 /* RecordPrayer */ = {
+			isa = PBXGroup;
+			children = (
+				2C6AD236288167EC003E8039 /* NotificationService.swift */,
+				2C6AD238288167EC003E8039 /* Info.plist */,
+			);
+			path = RecordPrayer;
+			sourceTree = "<group>";
+		};
 		2C868B92287F48E4001F095A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +197,7 @@
 				2C9FF3812874EA8E003A46CC /* macOS */,
 				2C9FF38A2874EA8E003A46CC /* Tests iOS */,
 				2C9FF3962874EA8E003A46CC /* Tests macOS */,
+				2C6AD235288167EC003E8039 /* RecordPrayer */,
 				2C9FF37B2874EA8E003A46CC /* Products */,
 				2C868B92287F48E4001F095A /* Frameworks */,
 			);
@@ -176,6 +222,7 @@
 				2CEA5F2E287DFB6600532664 /* Extensions.swift */,
 				2CEA5F31287DFC1B00532664 /* HelperFunctions.swift */,
 				2C868B8F287EBBA9001F095A /* AppDelegate.swift */,
+				2C868B9B28810E27001F095A /* NotificationManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -187,6 +234,7 @@
 				2C9FF3802874EA8E003A46CC /* PrayerUmmah.app */,
 				2C9FF3872874EA8E003A46CC /* Tests iOS.xctest */,
 				2C9FF3932874EA8E003A46CC /* Tests macOS.xctest */,
+				2C6AD234288167EC003E8039 /* RecordPrayer.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,6 +268,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2C6AD233288167EC003E8039 /* RecordPrayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C6AD23C288167EC003E8039 /* Build configuration list for PBXNativeTarget "RecordPrayer" */;
+			buildPhases = (
+				2C6AD230288167EC003E8039 /* Sources */,
+				2C6AD231288167EC003E8039 /* Frameworks */,
+				2C6AD232288167EC003E8039 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecordPrayer;
+			productName = RecordPrayer;
+			productReference = 2C6AD234288167EC003E8039 /* RecordPrayer.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2C9FF3792874EA8E003A46CC /* PrayerUmmah (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C9FF3A32874EA8E003A46CC /* Build configuration list for PBXNativeTarget "PrayerUmmah (iOS)" */;
@@ -227,10 +292,12 @@
 				2C9FF3762874EA8E003A46CC /* Sources */,
 				2C9FF3772874EA8E003A46CC /* Frameworks */,
 				2C9FF3782874EA8E003A46CC /* Resources */,
+				2C6AD23F288167EC003E8039 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2C6AD23A288167EC003E8039 /* PBXTargetDependency */,
 			);
 			name = "PrayerUmmah (iOS)";
 			packageProductDependencies = (
@@ -303,9 +370,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					2C6AD233288167EC003E8039 = {
+						CreatedOnToolsVersion = 14.0;
+					};
 					2C9FF3792874EA8E003A46CC = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -342,11 +412,19 @@
 				2C9FF37F2874EA8E003A46CC /* PrayerUmmah (macOS) */,
 				2C9FF3862874EA8E003A46CC /* Tests iOS */,
 				2C9FF3922874EA8E003A46CC /* Tests macOS */,
+				2C6AD233288167EC003E8039 /* RecordPrayer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2C6AD232288167EC003E8039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C9FF3782874EA8E003A46CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +464,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C6AD230288167EC003E8039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C6AD237288167EC003E8039 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C9FF3762874EA8E003A46CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,6 +482,7 @@
 				2C3BDBBC2876E97F00665F63 /* SettingsView.swift in Sources */,
 				2C1947B82875F44300773F31 /* HomeView.swift in Sources */,
 				2C3BDBB92876E7FB00665F63 /* PrayerView.swift in Sources */,
+				2C868B9C28810E27001F095A /* NotificationManager.swift in Sources */,
 				2CEA5F32287DFC1B00532664 /* HelperFunctions.swift in Sources */,
 				2C9FF39D2874EA8E003A46CC /* ContentView.swift in Sources */,
 				2CEA5F2C287ACCF400532664 /* UserDataModel.swift in Sources */,
@@ -414,6 +501,7 @@
 				2C3BDBBD2876E97F00665F63 /* SettingsView.swift in Sources */,
 				2C1947B92875F44300773F31 /* HomeView.swift in Sources */,
 				2C3BDBBA2876E7FB00665F63 /* PrayerView.swift in Sources */,
+				2C868B9D28810E27001F095A /* NotificationManager.swift in Sources */,
 				2CEA5F33287DFC1B00532664 /* HelperFunctions.swift in Sources */,
 				2C9FF39E2874EA8E003A46CC /* ContentView.swift in Sources */,
 				2CEA5F2D287ACCF400532664 /* UserDataModel.swift in Sources */,
@@ -443,6 +531,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2C6AD23A288167EC003E8039 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C6AD233288167EC003E8039 /* RecordPrayer */;
+			targetProxy = 2C6AD239288167EC003E8039 /* PBXContainerItemProxy */;
+		};
 		2C9FF3892874EA8E003A46CC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2C9FF3792874EA8E003A46CC /* PrayerUmmah (iOS) */;
@@ -456,6 +549,63 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2C6AD23D288167EC003E8039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5SRZY657F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecordPrayer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RecordPrayer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jawwaad.PrayerUmmah.RecordPrayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C6AD23E288167EC003E8039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M5SRZY657F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecordPrayer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RecordPrayer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jawwaad.PrayerUmmah.RecordPrayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		2C9FF3A12874EA8E003A46CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -570,6 +720,7 @@
 		2C9FF3A42874EA8E003A46CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "PrayerUmmah (iOS).entitlements";
@@ -602,6 +753,7 @@
 		2C9FF3A52874EA8E003A46CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "PrayerUmmah (iOS).entitlements";
@@ -776,6 +928,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2C6AD23C288167EC003E8039 /* Build configuration list for PBXNativeTarget "RecordPrayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C6AD23D288167EC003E8039 /* Debug */,
+				2C6AD23E288167EC003E8039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2C9FF3712874EA8C003A46CC /* Build configuration list for PBXProject "PrayerUmmah" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

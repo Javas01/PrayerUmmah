@@ -87,17 +87,17 @@ struct Params: Hashable, Codable {
 }
 
 class PrayerModel: ObservableObject {
-    @Published var prayers: KeyValuePairs = [:]
+    @Published var prayers: KeyValuePairs<String, String> = [:]
     @Published var currPrayer: String = "Fajr"
     @Published var selectedPrayer: String = "Fajr"
     
     func getCurrentPrayer() {
         let currTime = getCurrentTime()
-        let fajrTime = prayers[0].value as? String ?? ""
-        let dhuhrTime = prayers[1].value as? String ?? ""
-        let asrTime = prayers[2].value as? String ?? ""
-        let magrhibTime = prayers[3].value as? String ?? ""
-        let ishaTime = prayers[4].value as? String ?? ""
+        let fajrTime = prayers[0].value
+        let dhuhrTime = prayers[1].value
+        let asrTime = prayers[2].value
+        let magrhibTime = prayers[3].value
+        let ishaTime = prayers[4].value
 
         switch currTime {
         case fajrTime..<dhuhrTime:
@@ -158,6 +158,7 @@ class PrayerModel: ObservableObject {
                             .replacingOccurrences(of: "(EDT)", with: "") ?? ""
                     ]
                     self?.getCurrentPrayer()
+                    NotificationManager.instance.schedulePrayerNotifications(prayers: self?.prayers ?? ["Fajr": "05:00"])
                 }
             } catch {
                 print(error)
