@@ -165,13 +165,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C3BDBCC287AC8DA00665F63 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		2C6AD235288167EC003E8039 /* RecordPrayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +199,6 @@
 		2C9FF3722874EA8C003A46CC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				2C3BDBCC287AC8DA00665F63 /* Components */,
 				2C9FF3AF2875CC7A003A46CC /* GoogleService-Info.plist */,
 				2C9FF3732874EA8C003A46CC /* PrayerUmmahApp.swift */,
 				2C9FF3742874EA8C003A46CC /* ContentView.swift */,

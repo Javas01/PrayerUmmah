@@ -89,9 +89,9 @@ struct PrayerView: View {
                                     .font(.footnote)
                             }
                         }
-                        .foregroundColor(prayerModel.currPrayer == prayerName ? Color("Primary") : Color.black)
+                        .foregroundColor(prayerModel.currPrayer == prayerName ? Color("Primary") : Color.primary)
                         .padding(7)
-                        .background(prayerModel.selectedPrayer == prayerName ? Color(UIColor.systemGray6) : nil)
+                        .background(prayerModel.selectedPrayer == prayerName ? Color(UIColor.tertiarySystemGroupedBackground) : nil)
                         .cornerRadius(5)
                     }
                 }
@@ -140,7 +140,7 @@ struct PrayerView: View {
                 }
         }
         .onAppear {
-            UITableView.appearance().backgroundColor = .systemGroupedBackground
+            UITableView.appearance().backgroundColor = UIColor.tertiarySystemGroupedBackground
         }
         .onChange(of: UserModel.currUser, perform: { _ in isOverlayVisible = UserModel.currUser?.prayerData?[prayerModel.currPrayer] == false})
     }

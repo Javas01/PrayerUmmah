@@ -119,6 +119,8 @@ class PrayerModel: ObservableObject {
     }
 
     func fetch () {
+        let month = String(Calendar.current.component(.month, from: Date()))
+        let year = String(Calendar.current.component(.year, from: Date()))
         var components = URLComponents()
             components.scheme = "https"
             components.host = "api.aladhan.com"
@@ -127,8 +129,8 @@ class PrayerModel: ObservableObject {
                 URLQueryItem(name: "city", value: "Atlanta"),
                 URLQueryItem(name: "country", value: "United States"),
                 URLQueryItem(name: "method", value: "2"),
-                URLQueryItem(name: "month", value: "07"),
-                URLQueryItem(name: "year", value: "2022")
+                URLQueryItem(name: "month", value: month),
+                URLQueryItem(name: "year", value: year)
             ]
         guard let url = components.url else {
             print("Invalid URL")

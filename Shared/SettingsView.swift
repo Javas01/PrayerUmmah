@@ -10,18 +10,36 @@ import FirebaseAuth
 
 struct SettingsView: View {
     @State var isLoggedOut = false
+    @State private var isPresented = false;
 
     var body: some View {
         VStack{
             Text("Settings")
             Spacer()
             NavigationLink(destination: ContentView(), isActive: $isLoggedOut) { EmptyView() }.isDetailLink(false)
-            Button("Sign out") {
-                do {
-                    try Auth.auth().signOut()
-                    isLoggedOut = true
-                } catch {
-                    print(error)
+            HStack {
+                Button("Sign out") {
+                    do {
+                        try Auth.auth().signOut()
+                        isLoggedOut = true
+                    } catch {
+                        print(error)
+                    }
+                }
+                Button("Delete account") {
+                    isPresented = true
+                }
+                .foregroundColor(.red)
+                .alert(isPresented: $isPresented) {
+                    Alert(
+                        title: Text("Are you sure?"),
+                        message: Text("This action cannot be undone"),
+                        primaryButton: .destructive(Text("Delete")) {
+                            Auth.auth().currentUser?.delete()
+                            isLoggedOut = true
+                        },
+                        secondaryButton: .cancel()
+                    )
                 }
             }
         }
