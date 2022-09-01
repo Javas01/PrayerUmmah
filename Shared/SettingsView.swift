@@ -8,13 +8,69 @@
 import SwiftUI
 import FirebaseAuth
 
+
+struct ImagePicker: UIViewControllerRepresentable {
+    @Environment(\.presentationMode) private var presentationMode
+    var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @Binding var selectedImage: UIImage
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = sourceType
+        imagePicker.delegate = context.coordinator
+
+        return imagePicker
+    }
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+        var parent: ImagePicker
+
+        init(_ parent: ImagePicker) {
+            self.parent = parent
+        }
+
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                parent.selectedImage = image
+            }
+
+            parent.presentationMode.wrappedValue.dismiss()
+        }
+
+    }
+}
+
 struct SettingsView: View {
+    @State private var image = UIImage()
+    @State private var showSheet = false
     @State var isLoggedOut = false
-    @State private var isPresented = false;
+    @State private var isPresented = false
 
     var body: some View {
         VStack{
             Text("Settings")
+            Image(uiImage: self.image)
+                    .resizable()
+                    .cornerRadius(50)
+                    .frame(width: 150, height: 150)
+                    .background(Color.black.opacity(0.2))
+                    .aspectRatio(contentMode: .fill)
+                    .clipShape(Circle())
+                    .padding(8)
+                    .onTapGesture {
+                        showSheet = true
+                    }
             Spacer()
             NavigationLink(destination: ContentView(), isActive: $isLoggedOut) { EmptyView() }.isDetailLink(false)
             HStack {
@@ -42,6 +98,9 @@ struct SettingsView: View {
                     )
                 }
             }
+        }
+        .sheet(isPresented: $showSheet) {
+            ImagePicker(selectedImage: $image)
         }
     }
 }
