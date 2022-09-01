@@ -62,14 +62,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                               willPresent notification: UNNotification,
                               withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                 -> Void) {
-      print("otw")
       completionHandler([[.banner, .list, .badge, .sound]])
   }
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               didReceive response: UNNotificationResponse,
                               withCompletionHandler completionHandler: @escaping () -> Void) {
-      print("outside")
       let db = Firestore.firestore()
       let userInfo = response.notification.request.content.userInfo
           let currPrayer = userInfo["CURR_PRAYER"] as! String
@@ -80,10 +78,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
       var copy = prayerData
 
       if response.actionIdentifier == "SET_YES" {
-          print("Set prayer to made")
           copy[currPrayer] = true
       } else if response.actionIdentifier == "SET_NO" {
-          print("Set prayer to not made")
           copy[currPrayer] = false
       }
 

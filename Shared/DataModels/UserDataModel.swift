@@ -29,50 +29,50 @@ struct UserPrayerData: Codable, Equatable {
     subscript(prayerName: String) -> Bool {
         get {
             switch prayerName {
-             case "Fajr":
-                 return Fajr
-             case "Dhuhr":
-                 return Dhuhr
-             case "Asr":
-                 return Asr
-             case "Maghrib":
-                 return Maghrib
-             default:
-                 return Isha
-             }
+            case "Fajr":
+                return Fajr
+            case "Dhuhr":
+                return Dhuhr
+            case "Asr":
+                return Asr
+            case "Maghrib":
+                return Maghrib
+            default:
+                return Isha
+            }
         }
         set(newValue) {
             switch prayerName {
-             case "Fajr":
+            case "Fajr":
                 Fajr = newValue
-             case "Dhuhr":
+            case "Dhuhr":
                 Dhuhr = newValue
-             case "Asr":
+            case "Asr":
                 Asr = newValue
-             case "Maghrib":
+            case "Maghrib":
                 Maghrib = newValue
-             default:
+            default:
                 Isha = newValue
-             }
+            }
         }
     }
 }
 
 class UserModel: ObservableObject {
     @Published var users: [User] = []
-//    @Published var usersPrayerHistory: [userPrayerData] = []
+    //    @Published var usersPrayerHistory: [userPrayerData] = []
     static var currUser: User?
     @Published var completedUsers: [User] = []
     @Published var notCompletedUsers: [User] = []
-
+    
     private let db = Firestore.firestore()
-
+    
     @MainActor
     func getUsers() async {
         do {
             let querySnapshot = try await db.collection("users").getDocuments()
             let documents = querySnapshot.documents
-
+            
             self.users = documents.compactMap { documentSnapshot -> User in
                 return try! documentSnapshot.data(as: User.self)
             }
@@ -85,10 +85,14 @@ class UserModel: ObservableObject {
         }
     }
     func getPrayerData(userIds: [String], date: String = getCurrentDate()) -> Void {
-        let currDate = getCurrentDate()
+        let fajrTime = PrayerModel.todayPrayers.first?.value ?? ""
+        let currTime = getCurrentTime()
+        print(fajrTime)
+        let isNewDay = currTime > fajrTime
+        let currDate = getCurrentDate(date: isNewDay ? Date() : Date().dayBefore)
         userIds.forEach { userId in
             var prayerData = UserPrayerData(date: currDate, Fajr: false, Dhuhr: false, Asr: false, Maghrib: false, Isha: false)
-
+            
             db.collection("users").document(userId).collection("prayerHistory").document(currDate)
                 .addSnapshotListener { documentSnapshot, error in
                     guard let document = documentSnapshot else {
@@ -98,13 +102,13 @@ class UserModel: ObservableObject {
                     do {
                         prayerData = try document.data(as: UserPrayerData.self)
                     } catch {
-                        print("Document data was empty.")
+                        print("No data for " + currDate)
                     }
                     self.users = self.users.map { user in
                         if user.id == userId {
                             var copy = user
                             copy.prayerData = prayerData
-
+                            
                             return copy
                         } else {
                             return user

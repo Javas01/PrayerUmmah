@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-func getCurrentDate() -> String {
+func getCurrentDate(date: Date = Date()) -> String {
     let timeFormatter = DateFormatter()
     timeFormatter.dateFormat = "dd-MM-yyyy"
-    let stringDate = timeFormatter.string(from: Date())
+    let stringDate = timeFormatter.string(from: date)
     
     return stringDate
 }

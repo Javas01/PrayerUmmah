@@ -32,8 +32,8 @@ struct HomeView: View {
         .accentColor(Color("Primary"))
         .navigationBarBackButtonHidden(true)
         .task {
+            await prayerModel.fetch()
             await userModel.getUsers()
-            prayerModel.fetch()
         }
     }
 }
