@@ -18,13 +18,30 @@ struct User: Identifiable, Codable, Equatable {
     var profilePic: String
     var prayerData: UserPrayerData?
 }
-struct UserPrayerData: Codable, Equatable {
-    @DocumentID var date: String?
+struct UserPrayerData: Codable, Equatable, Identifiable {
+    @DocumentID var id: String?
     var Fajr: Bool
     var Dhuhr: Bool
     var Asr: Bool
     var Maghrib: Bool
     var Isha: Bool
+    
+    func madePrayers() -> Int {
+        var count = 0
+        if(Fajr) {count+=1}
+        if(Dhuhr) {count+=1}
+        if(Asr) {count+=1}
+        if(Maghrib) {count+=1}
+        if(Isha) {count+=1}
+        
+        return count
+    }
+    
+    func formattedDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yy"
+        return dateFormatter.date(from: id!)!
+    }
     
     subscript(prayerName: String) -> Bool {
         get {
@@ -60,7 +77,7 @@ struct UserPrayerData: Codable, Equatable {
 
 class UserModel: ObservableObject {
     @Published var users: [User] = []
-    //    @Published var usersPrayerHistory: [userPrayerData] = []
+    @Published var usersPrayerHistory: [UserPrayerData] = []
     static var currUser: User?
     @Published var completedUsers: [User] = []
     @Published var notCompletedUsers: [User] = []
@@ -84,14 +101,29 @@ class UserModel: ObservableObject {
             print("There was an issue getting Users: \(error)")
         }
     }
+    func getPrayerHistory() async -> [UserPrayerData] {
+        let userId = Auth.auth().currentUser?.uid
+        do {
+            let querySnapshot = try await db.collection("users").document(userId!).collection("prayerHistory").getDocuments()
+            let documents = querySnapshot.documents
+            let prayerHistory = documents.compactMap { documentSnapshot -> UserPrayerData in
+                return try! documentSnapshot.data(as: UserPrayerData.self)
+            }
+            
+            return prayerHistory
+        } catch {
+            print("There was an issue getting prayer history: \(error)")
+            return []
+        }
+    }
     func getPrayerData(userIds: [String], date: String = getCurrentDate()) -> Void {
         let fajrTime = PrayerModel.todayPrayers.first?.value ?? ""
         let currTime = getCurrentTime()
-        print(fajrTime)
         let isNewDay = currTime > fajrTime
         let currDate = getCurrentDate(date: isNewDay ? Date() : Date().dayBefore)
+        
         userIds.forEach { userId in
-            var prayerData = UserPrayerData(date: currDate, Fajr: false, Dhuhr: false, Asr: false, Maghrib: false, Isha: false)
+            var prayerData = UserPrayerData(id: currDate, Fajr: false, Dhuhr: false, Asr: false, Maghrib: false, Isha: false)
             
             db.collection("users").document(userId).collection("prayerHistory").document(currDate)
                 .addSnapshotListener { documentSnapshot, error in

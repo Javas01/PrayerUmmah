@@ -142,7 +142,7 @@ struct PrayerView: View {
         }
         .onAppear {
             UITableView.appearance().backgroundColor = UIColor.tertiarySystemGroupedBackground
-            isOverlayVisible = true
+            isOverlayVisible = UserModel.currUser?.prayerData?[prayerModel.currPrayer] == false
         }
         .onChange(of: UserModel.currUser, perform: { _ in isOverlayVisible = UserModel.currUser?.prayerData?[prayerModel.currPrayer] == false})
     }

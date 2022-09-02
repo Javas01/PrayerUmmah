@@ -28,3 +28,11 @@ extension Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: self)!
     }
 }
+
+extension String {
+    func getDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yy"
+        return dateFormatter.date(from: self) ?? Date()
+    }
+}

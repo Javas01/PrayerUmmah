@@ -63,7 +63,7 @@ struct SettingsView: View {
             Image(uiImage: self.image)
                     .resizable()
                     .cornerRadius(50)
-                    .frame(width: 150, height: 150)
+                    .frame(width: 200, height: 200)
                     .background(Color.black.opacity(0.2))
                     .aspectRatio(contentMode: .fill)
                     .clipShape(Circle())
@@ -71,6 +71,12 @@ struct SettingsView: View {
                     .onTapGesture {
                         showSheet = true
                     }
+            HStack{
+                Text(UserModel.currUser?.firstName ?? "FirstName")
+                    .font(.headline)
+                Text(UserModel.currUser?.lastName ?? "LastName")
+                    .font(.headline)
+            }
             Spacer()
             NavigationLink(destination: ContentView(), isActive: $isLoggedOut) { EmptyView() }.isDetailLink(false)
             HStack {

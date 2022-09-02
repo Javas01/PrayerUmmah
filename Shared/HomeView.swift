@@ -16,9 +16,9 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            FriendsView()
+            GraphView(prayerModel: prayerModel, userModel: userModel)
                 .tabItem{
-                    Label("Friends", systemImage: "person.fill")
+                    Label("History", systemImage: "chart.xyaxis.line")
                 }.tag(1)
             PrayerView(prayerModel: prayerModel, userModel: userModel)
                 .tabItem{
